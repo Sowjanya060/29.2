@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define SIZE 50  
+addElement (int *arr, int num, int pos)  
+{  
+    int i;  
+    for (i = num; i > pos; i--)  
+    {  
+        arr[i] = arr[i-1];  
+    }  
+}  
+disp( int arr[], int num)  
+{  
+    int i;  
+    for ( i = 0; i < num; i++)  
+    {  
+        printf( "\n arr[%d] = %d", i, arr[i]);  
+    }  
+}  
+  
+int main ()  
+{    
+    int arr[SIZE];  
+    int i, num, pos, result,ele;  
+    scanf (" %d", &num);  
+    for (i = 0; i < num; i++)  
+    {    
+        scanf (" %d", &arr[i]);  
+    }  
+    scanf (" %d", &pos);
+	scanf("%d",&ele);    
+    if (pos >=0 && pos < SIZE)  
+    {      
+   
+        addElement(arr, num, pos);  
+           arr[pos]=ele;
+        printf (" \n Array after insertion: \n");  
+        disp( arr, num+1);  
+    }  
+    return 0;     
+}  
